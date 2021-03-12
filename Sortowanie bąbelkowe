@@ -1,0 +1,40 @@
+Program Bubble_sort;
+	{Program for generation of a random list and for sorting this list by bubble sort method}
+	
+
+	{head of the code}
+	const
+	    x = 100;//length of the list
+	var
+	    list_s: array[1..x] of integer;
+	    i, l, m: integer;
+	    
+	{creating a list of integer values}
+	begin
+	    randomize;
+	    
+	    write ('Lista do sortowania na początku: ');
+	    for i := 1 to x do 
+	    begin
+	        list_s[i] := random(100);
+	        write (list_s[i]:4);//4 - place for number in output
+	    end;
+	    writeln;
+	    
+	{Bubble sort}
+	    for i := 1 to x-1 do
+	        for l := 1 to x-i do
+	            if list_s[l] > list_s[l+1] then //> for < if it is needed to sort in another way
+	            begin
+	                m := list_s[l];
+	                list_s[l] := list_s[l+1];
+	                list_s[l+1] := m
+	            end;
+	 
+	    write ('Odsortowana lista: ');
+	    for i := 1 to x do
+	    begin
+	        write (list_s[i]:4);
+	    end;
+	    readln;
+	end.
