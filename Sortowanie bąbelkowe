@@ -1,7 +1,6 @@
 Program Bubble_sort;
 	{Program for generation of a random list and for sorting this list by bubble sort method}
 	
-
 	{head of the code}
 	const
 	    x = 100;//length of the list
