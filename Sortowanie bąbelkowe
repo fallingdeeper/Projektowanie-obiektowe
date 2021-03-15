@@ -9,6 +9,7 @@ Program Bubble_sort;
 	    i, l, m: integer;
 	    
 	{creating a list of integer values}
+	procedure list_of_int_val();
 	begin
 	    randomize;
 	    
@@ -17,10 +18,13 @@ Program Bubble_sort;
 	    begin
 	        list_s[i] := random(100);
 	        write (list_s[i]:4);//4 - place for number in output
-	    end;
-	    writeln;
+	    end
+	end;
+           
 	    
 	{Bubble sort}
+	procedure Bubble_sort();
+	begin
 	    for i := 1 to x-1 do
 	        for l := 1 to x-i do
 	            if list_s[l] > list_s[l+1] then //> for < if it is needed to sort in another way
@@ -28,8 +32,13 @@ Program Bubble_sort;
 	                m := list_s[l];
 	                list_s[l] := list_s[l+1];
 	                list_s[l+1] := m
-	            end;
-	 
+	            end
+	end;
+	
+	begin
+	    list_of_int_val();
+	    writeln;
+	    Bubble_sort();
 	    write ('Odsortowana lista: ');
 	    for i := 1 to x do
 	    begin
